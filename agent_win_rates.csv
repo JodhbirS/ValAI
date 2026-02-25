@@ -1,0 +1,337 @@
+agent     ,map      ,win_rate ,wins ,rounds
+Gekko     ,Abyss    ,   61.04 ,  47 ,    77
+Fade      ,Abyss    ,   54.76 ,  69 ,   126
+Sage      ,Abyss    ,   53.91 , 131 ,   243
+Killjoy   ,Abyss    ,   52.85 , 130 ,   246
+Sova      ,Abyss    ,   52.84 ,1034 ,  1957
+Viper     ,Abyss    ,   52.66 , 466 ,   885
+Veto      ,Abyss    ,   52.12 ,1205 ,  2312
+Phoenix   ,Abyss    ,   51.92 , 325 ,   626
+Clove     ,Abyss    ,   51.72 , 648 ,  1253
+Astra     ,Abyss    ,   51.48 ,1598 ,  3104
+Waylay    ,Abyss    ,   50.68 ,2016 ,  3978
+KAY/O     ,Abyss    ,   50.03 ,1581 ,  3160
+Chamber   ,Abyss    ,   49.86 ,1765 ,  3540
+Tejo      ,Abyss    ,   49.75 ,1272 ,  2557
+Jett      ,Abyss    ,   49.71 ,1884 ,  3790
+Yoru      ,Abyss    ,   49.48 ,2003 ,  4048
+Breach    ,Abyss    ,   49.46 , 967 ,  1955
+Omen      ,Abyss    ,   49.41 ,1788 ,  3619
+Harbor    ,Abyss    ,   48.69 , 334 ,   686
+Iso       ,Abyss    ,   48.58 , 290 ,   597
+Cypher    ,Abyss    ,   48.11 , 904 ,  1879
+Brimstone ,Abyss    ,   47.89 , 216 ,   451
+Neon      ,Abyss    ,   47.23 , 230 ,   487
+Deadlock  ,Abyss    ,   46.15 , 246 ,   533
+Vyse      ,Abyss    ,   45.62 , 541 ,  1186
+Skye      ,Abyss    ,   45.45 , 235 ,   517
+Reyna     ,Abyss    ,   45.12 , 111 ,   246
+Raze      ,Abyss    ,   31.58 ,  12 ,    38
+Raze      ,Ascent   ,   66.67 ,  18 ,    27
+Chamber   ,Ascent   ,   60.34 , 140 ,   232
+Skye      ,Ascent   ,   57.79 ,  89 ,   154
+Breach    ,Ascent   ,   57.78 ,  52 ,    90
+Brimstone ,Ascent   ,   56.52 ,  13 ,    23
+KAY/O     ,Ascent   ,   56.47 ,  48 ,    85
+Tejo      ,Ascent   ,   55.95 ,  47 ,    84
+Deadlock  ,Ascent   ,   54.96 ,  72 ,   131
+Astra     ,Ascent   ,   53.75 ,  43 ,    80
+Omen      ,Ascent   ,   53.41 , 141 ,   264
+Neon      ,Ascent   ,   51.95 ,  40 ,    77
+Clove     ,Ascent   ,   51.89 , 110 ,   212
+Fade      ,Ascent   ,   50.64 ,  79 ,   156
+Reyna     ,Ascent   ,   49.64 ,  68 ,   137
+Yoru      ,Ascent   ,   48.71 , 151 ,   310
+Killjoy   ,Ascent   ,   48.55 , 117 ,   241
+Jett      ,Ascent   ,   47.81 , 153 ,   320
+Phoenix   ,Ascent   ,   47.52 ,  67 ,   141
+Vyse      ,Ascent   ,   46.98 ,  70 ,   149
+Waylay    ,Ascent   ,   46.25 , 111 ,   240
+Veto      ,Ascent   ,   45.83 ,  11 ,    24
+Iso       ,Ascent   ,   44.2  ,  61 ,   138
+Harbor    ,Ascent   ,   43.66 ,  31 ,    71
+Sage      ,Ascent   ,   42.65 ,  29 ,    68
+Viper     ,Ascent   ,   42.65 ,  29 ,    68
+Cypher    ,Ascent   ,   42.48 ,  96 ,   226
+Sova      ,Ascent   ,   39.83 ,  47 ,   118
+Gekko     ,Ascent   ,    0.0  ,   0 ,     0
+Vyse      ,Bind     ,   55.81 , 144 ,   258
+Sova      ,Bind     ,   55.46 , 132 ,   238
+Iso       ,Bind     ,   53.08 , 138 ,   260
+Viper     ,Bind     ,   52.89 ,1937 ,  3662
+Tejo      ,Bind     ,   52.12 ,1771 ,  3398
+Sage      ,Bind     ,   52.08 ,  75 ,   144
+Veto      ,Bind     ,   52.08 , 500 ,   960
+Brimstone ,Bind     ,   52.04 ,2814 ,  5407
+Yoru      ,Bind     ,   51.48 ,3893 ,  7562
+Fade      ,Bind     ,   51.12 ,3847 ,  7525
+Phoenix   ,Bind     ,   50.67 , 453 ,   894
+Waylay    ,Bind     ,   49.92 ,3452 ,  6915
+Harbor    ,Bind     ,   49.83 , 147 ,   295
+Raze      ,Bind     ,   49.55 ,3817 ,  7703
+Clove     ,Bind     ,   49.53 ,1566 ,  3162
+Chamber   ,Bind     ,   49.14 ,2428 ,  4941
+Skye      ,Bind     ,   49.13 , 425 ,   865
+Neon      ,Bind     ,   49.03 , 404 ,   824
+KAY/O     ,Bind     ,   48.8  , 408 ,   836
+Reyna     ,Bind     ,   48.37 ,3780 ,  7814
+Astra     ,Bind     ,   47.04 ,1190 ,  2530
+Gekko     ,Bind     ,   46.74 , 373 ,   798
+Deadlock  ,Bind     ,   46.4  , 972 ,  2095
+Jett      ,Bind     ,   46.35 , 432 ,   932
+Cypher    ,Bind     ,   46.24 , 467 ,  1010
+Breach    ,Bind     ,   44.44 , 160 ,   360
+Omen      ,Bind     ,   42.98 , 156 ,   363
+Killjoy   ,Bind     ,   41.79 ,  28 ,    67
+Cypher    ,Breeze   ,   68.42 ,  26 ,    38
+Raze      ,Breeze   ,   63.93 ,  78 ,   122
+Astra     ,Breeze   ,   57.5  ,  23 ,    40
+Harbor    ,Breeze   ,   56.52 ,  13 ,    23
+Clove     ,Breeze   ,   56.44 , 114 ,   202
+KAY/O     ,Breeze   ,   54.33 ,  69 ,   127
+Fade      ,Breeze   ,   53.72 , 101 ,   188
+Breach    ,Breeze   ,   53.67 ,  95 ,   177
+Yoru      ,Breeze   ,   53.45 ,  31 ,    58
+Skye      ,Breeze   ,   53.19 ,  75 ,   141
+Chamber   ,Breeze   ,   51.27 , 101 ,   197
+Killjoy   ,Breeze   ,   49.69 ,  80 ,   161
+Iso       ,Breeze   ,   49.04 ,  51 ,   104
+Brimstone ,Breeze   ,   48.64 , 107 ,   220
+Waylay    ,Breeze   ,   47.83 ,  55 ,   115
+Phoenix   ,Breeze   ,   46.51 ,  40 ,    86
+Reyna     ,Breeze   ,   46.51 ,  20 ,    43
+Viper     ,Breeze   ,   45.45 ,  50 ,   110
+Omen      ,Breeze   ,   44.68 ,  21 ,    47
+Neon      ,Breeze   ,   44.12 ,  45 ,   102
+Jett      ,Breeze   ,   43.78 ,  95 ,   217
+Tejo      ,Breeze   ,   41.4  ,  77 ,   186
+Deadlock  ,Breeze   ,   38.1  ,  16 ,    42
+Sova      ,Breeze   ,   35.0  ,   7 ,    20
+Vyse      ,Breeze   ,   35.0  ,   7 ,    20
+Gekko     ,Breeze   ,   27.78 ,   5 ,    18
+Sage      ,Breeze   ,    0.0  ,   0 ,     0
+Veto      ,Breeze   ,    0.0  ,   0 ,     0
+Iso       ,Corrode  ,   59.42 , 372 ,   626
+Brimstone ,Corrode  ,   56.16 , 187 ,   333
+Raze      ,Corrode  ,   56.05 , 264 ,   471
+Clove     ,Corrode  ,   55.21 ,1230 ,  2228
+Phoenix   ,Corrode  ,   53.37 , 625 ,  1171
+Sage      ,Corrode  ,   53.28 , 731 ,  1372
+Chamber   ,Corrode  ,   52.86 ,2523 ,  4773
+Gekko     ,Corrode  ,   52.68 ,  59 ,   112
+Neon      ,Corrode  ,   52.34 ,2058 ,  3932
+Skye      ,Corrode  ,   51.93 , 323 ,   622
+Astra     ,Corrode  ,   51.83 ,1164 ,  2246
+Deadlock  ,Corrode  ,   51.78 , 320 ,   618
+Reyna     ,Corrode  ,   51.0  , 179 ,   351
+Killjoy   ,Corrode  ,   50.72 ,  35 ,    69
+Veto      ,Corrode  ,   50.68 , 787 ,  1553
+Yoru      ,Corrode  ,   50.56 ,3042 ,  6017
+Fade      ,Corrode  ,   49.84 ,2898 ,  5815
+Sova      ,Corrode  ,   49.82 ,2744 ,  5508
+Vyse      ,Corrode  ,   49.44 ,1627 ,  3291
+Tejo      ,Corrode  ,   49.32 , 612 ,  1241
+Viper     ,Corrode  ,   49.02 ,2561 ,  5224
+Waylay    ,Corrode  ,   47.78 ,2316 ,  4847
+Jett      ,Corrode  ,   46.92 , 434 ,   925
+Breach    ,Corrode  ,   46.7  , 170 ,   364
+KAY/O     ,Corrode  ,   46.48 ,2251 ,  4843
+Omen      ,Corrode  ,   45.62 ,1795 ,  3935
+Cypher    ,Corrode  ,   42.18 , 240 ,   569
+Harbor    ,Corrode  ,   40.34 ,  96 ,   238
+Cypher    ,Fracture ,   68.42 ,  13 ,    19
+Viper     ,Fracture ,   63.93 ,  39 ,    61
+Sova      ,Fracture ,   59.64 ,  99 ,   166
+Jett      ,Fracture ,   57.37 , 179 ,   312
+Clove     ,Fracture ,   56.36 , 133 ,   236
+Fade      ,Fracture ,   55.37 ,  67 ,   121
+Killjoy   ,Fracture ,   53.74 , 187 ,   348
+Astra     ,Fracture ,   53.66 ,  44 ,    82
+Phoenix   ,Fracture ,   51.75 , 163 ,   315
+Chamber   ,Fracture ,   50.71 , 179 ,   353
+Veto      ,Fracture ,   50.0  ,  20 ,    40
+Yoru      ,Fracture ,   50.0  ,  37 ,    74
+Iso       ,Fracture ,   49.69 ,  81 ,   163
+Skye      ,Fracture ,   49.26 , 166 ,   337
+Tejo      ,Fracture ,   48.41 ,  76 ,   157
+Harbor    ,Fracture ,   47.59 , 138 ,   290
+Gekko     ,Fracture ,   47.58 ,  59 ,   124
+KAY/O     ,Fracture ,   44.68 ,  42 ,    94
+Sage      ,Fracture ,   44.58 ,  37 ,    83
+Waylay    ,Fracture ,   44.38 ,  79 ,   178
+Raze      ,Fracture ,   44.16 ,  34 ,    77
+Omen      ,Fracture ,   42.99 ,  92 ,   214
+Breach    ,Fracture ,   38.52 ,  52 ,   135
+Brimstone ,Fracture ,   35.0  ,  14 ,    40
+Reyna     ,Fracture ,   29.73 ,  11 ,    37
+Deadlock  ,Fracture ,   25.71 ,   9 ,    35
+Neon      ,Fracture ,   23.53 ,   4 ,    17
+Vyse      ,Fracture ,    0.0  ,   0 ,     0
+Raze      ,Haven    ,   60.0  , 117 ,   195
+Brimstone ,Haven    ,   57.36 , 187 ,   326
+Skye      ,Haven    ,   54.12 , 585 ,  1081
+Clove     ,Haven    ,   52.81 ,1634 ,  3094
+Viper     ,Haven    ,   52.35 ,4971 ,  9496
+Veto      ,Haven    ,   52.21 , 295 ,   565
+Neon      ,Haven    ,   51.36 ,5171 , 10069
+Sage      ,Haven    ,   51.22 ,1276 ,  2491
+Chamber   ,Haven    ,   51.04 ,2253 ,  4414
+Fade      ,Haven    ,   50.69 ,1466 ,  2892
+Yoru      ,Haven    ,   50.51 ,5165 , 10225
+Astra     ,Haven    ,   50.43 ,1066 ,  2114
+Killjoy   ,Haven    ,   50.39 ,4806 ,  9538
+Harbor    ,Haven    ,   50.29 ,  87 ,   173
+Iso       ,Haven    ,   49.83 ,1567 ,  3145
+Sova      ,Haven    ,   49.71 ,1627 ,  3273
+Waylay    ,Haven    ,   49.27 ,1654 ,  3357
+Reyna     ,Haven    ,   49.26 , 367 ,   745
+Tejo      ,Haven    ,   49.05 , 336 ,   685
+Gekko     ,Haven    ,   49.02 ,  50 ,   102
+Cypher    ,Haven    ,   48.66 ,4043 ,  8308
+Phoenix   ,Haven    ,   48.4  , 121 ,   250
+Vyse      ,Haven    ,   48.3  , 142 ,   294
+Omen      ,Haven    ,   47.85 ,2309 ,  4825
+Jett      ,Haven    ,   47.07 ,2742 ,  5825
+Breach    ,Haven    ,   44.25 ,1963 ,  4436
+KAY/O     ,Haven    ,   43.99 , 161 ,   366
+Deadlock  ,Haven    ,   43.3  ,  84 ,   194
+Iso       ,Icebox   ,   60.67 ,  91 ,   150
+Raze      ,Icebox   ,   57.07 , 109 ,   191
+Skye      ,Icebox   ,   56.59 , 249 ,   440
+Gekko     ,Icebox   ,   53.85 ,  28 ,    52
+Veto      ,Icebox   ,   53.32 , 273 ,   512
+Cypher    ,Icebox   ,   52.82 , 553 ,  1047
+Brimstone ,Icebox   ,   52.79 , 208 ,   394
+Sova      ,Icebox   ,   52.15 ,2127 ,  4079
+Clove     ,Icebox   ,   52.1  , 435 ,   835
+Yoru      ,Icebox   ,   51.13 ,2339 ,  4575
+Neon      ,Icebox   ,   51.08 ,1907 ,  3733
+Vyse      ,Icebox   ,   50.81 , 565 ,  1112
+Tejo      ,Icebox   ,   50.66 ,1928 ,  3806
+Viper     ,Icebox   ,   50.16 , 157 ,   313
+Killjoy   ,Icebox   ,   49.94 ,2351 ,  4708
+Sage      ,Icebox   ,   49.44 , 750 ,  1517
+Jett      ,Icebox   ,   49.18 ,1145 ,  2328
+Chamber   ,Icebox   ,   49.09 ,1786 ,  3638
+Fade      ,Icebox   ,   48.77 ,2187 ,  4484
+Astra     ,Icebox   ,   48.41 , 699 ,  1444
+KAY/O     ,Icebox   ,   48.19 ,1490 ,  3092
+Waylay    ,Icebox   ,   47.79 ,1791 ,  3748
+Omen      ,Icebox   ,   46.58 , 136 ,   292
+Phoenix   ,Icebox   ,   45.58 , 191 ,   419
+Harbor    ,Icebox   ,   42.57 ,  63 ,   148
+Breach    ,Icebox   ,   40.93 ,  88 ,   215
+Reyna     ,Icebox   ,   38.89 ,  14 ,    36
+Deadlock  ,Icebox   ,    7.14 ,   1 ,    14
+Gekko     ,Lotus    ,   65.0  ,  26 ,    40
+Waylay    ,Lotus    ,   56.55 , 423 ,   748
+Sage      ,Lotus    ,   55.56 , 100 ,   180
+Iso       ,Lotus    ,   54.74 , 127 ,   232
+Brimstone ,Lotus    ,   53.88 , 111 ,   206
+Killjoy   ,Lotus    ,   52.35 , 245 ,   468
+Clove     ,Lotus    ,   52.06 , 379 ,   728
+Veto      ,Lotus    ,   52.05 , 229 ,   440
+Viper     ,Lotus    ,   51.77 , 321 ,   620
+Fade      ,Lotus    ,   51.4  , 350 ,   681
+Sova      ,Lotus    ,   51.24 , 228 ,   445
+Chamber   ,Lotus    ,   51.02 , 350 ,   686
+Reyna     ,Lotus    ,   50.21 , 119 ,   237
+Harbor    ,Lotus    ,   50.0  ,  74 ,   148
+Tejo      ,Lotus    ,   49.89 , 225 ,   451
+Phoenix   ,Lotus    ,   49.29 , 139 ,   282
+Omen      ,Lotus    ,   49.0  , 320 ,   653
+Jett      ,Lotus    ,   48.65 , 144 ,   296
+Raze      ,Lotus    ,   48.35 , 351 ,   726
+Cypher    ,Lotus    ,   48.02 , 109 ,   227
+Deadlock  ,Lotus    ,   47.79 , 108 ,   226
+Neon      ,Lotus    ,   47.49 , 406 ,   855
+Yoru      ,Lotus    ,   47.27 , 294 ,   622
+Skye      ,Lotus    ,   45.54 ,  97 ,   213
+Vyse      ,Lotus    ,   45.48 , 171 ,   376
+Breach    ,Lotus    ,   45.24 , 176 ,   389
+KAY/O     ,Lotus    ,   45.08 , 119 ,   264
+Astra     ,Lotus    ,   43.17 , 136 ,   315
+Gekko     ,Pearl    ,   76.47 ,  26 ,    34
+Harbor    ,Pearl    ,   54.97 , 393 ,   715
+Yoru      ,Pearl    ,   54.42 , 912 ,  1676
+Phoenix   ,Pearl    ,   53.37 ,  95 ,   178
+Clove     ,Pearl    ,   52.9  , 374 ,   707
+Omen      ,Pearl    ,   52.07 , 666 ,  1279
+Neon      ,Pearl    ,   51.83 ,1571 ,  3031
+Sova      ,Pearl    ,   51.77 , 190 ,   367
+Jett      ,Pearl    ,   49.76 ,1480 ,  2974
+Iso       ,Pearl    ,   49.74 ,  97 ,   195
+Tejo      ,Pearl    ,   49.49 ,  97 ,   196
+Veto      ,Pearl    ,   49.28 , 102 ,   207
+Skye      ,Pearl    ,   48.91 , 135 ,   276
+Astra     ,Pearl    ,   48.8  ,1020 ,  2090
+Viper     ,Pearl    ,   48.7  , 448 ,   920
+Chamber   ,Pearl    ,   48.58 , 683 ,  1406
+Cypher    ,Pearl    ,   48.08 , 351 ,   730
+Brimstone ,Pearl    ,   47.73 ,  21 ,    44
+Breach    ,Pearl    ,   47.27 , 121 ,   256
+Killjoy   ,Pearl    ,   45.76 ,  27 ,    59
+Reyna     ,Pearl    ,   45.6  , 176 ,   386
+Waylay    ,Pearl    ,   45.55 , 348 ,   764
+Sage      ,Pearl    ,   45.05 ,  41 ,    91
+Fade      ,Pearl    ,   43.94 ,  87 ,   198
+KAY/O     ,Pearl    ,   43.44 , 424 ,   976
+Vyse      ,Pearl    ,   41.94 ,  26 ,    62
+Raze      ,Pearl    ,   38.1  ,   8 ,    21
+Deadlock  ,Pearl    ,    0.0  ,   0 ,     0
+Iso       ,Split    ,   70.99 ,  93 ,   131
+Brimstone ,Split    ,   52.94 , 135 ,   255
+Veto      ,Split    ,   52.54 , 434 ,   826
+Clove     ,Split    ,   52.18 ,1076 ,  2062
+Neon      ,Split    ,   52.14 , 926 ,  1776
+Viper     ,Split    ,   51.84 ,1814 ,  3499
+Gekko     ,Split    ,   51.35 ,  19 ,    37
+Raze      ,Split    ,   51.35 ,3522 ,  6859
+Chamber   ,Split    ,   51.21 ,1797 ,  3509
+Harbor    ,Split    ,   50.76 ,  67 ,   132
+Sage      ,Split    ,   50.7  ,  36 ,    71
+Astra     ,Split    ,   50.35 ,2219 ,  4407
+Yoru      ,Split    ,   50.16 ,3103 ,  6186
+Reyna     ,Split    ,   50.12 ,2802 ,  5591
+Tejo      ,Split    ,   50.12 ,1024 ,  2043
+Fade      ,Split    ,   49.45 ,2920 ,  5905
+Phoenix   ,Split    ,   49.35 ,1481 ,  3001
+Cypher    ,Split    ,   49.16 , 935 ,  1902
+Waylay    ,Split    ,   49.13 ,3157 ,  6426
+Sova      ,Split    ,   48.74 , 116 ,   238
+Omen      ,Split    ,   48.69 ,2522 ,  5180
+Killjoy   ,Split    ,   48.2  , 349 ,   724
+Jett      ,Split    ,   48.06 , 496 ,  1032
+KAY/O     ,Split    ,   47.38 , 172 ,   363
+Breach    ,Split    ,   46.18 , 882 ,  1910
+Skye      ,Split    ,   46.1  , 142 ,   308
+Deadlock  ,Split    ,   45.1  , 410 ,   909
+Vyse      ,Split    ,   37.1  ,  23 ,    62
+Skye      ,Sunset   ,   60.25 , 341 ,   566
+Clove     ,Sunset   ,   56.81 , 989 ,  1741
+Iso       ,Sunset   ,   56.02 , 186 ,   332
+Gekko     ,Sunset   ,   55.56 ,  70 ,   126
+Sage      ,Sunset   ,   54.55 , 180 ,   330
+Brimstone ,Sunset   ,   54.09 ,  86 ,   159
+Phoenix   ,Sunset   ,   53.64 ,1593 ,  2970
+Chamber   ,Sunset   ,   53.41 ,1833 ,  3432
+Harbor    ,Sunset   ,   52.78 ,  57 ,   108
+Fade      ,Sunset   ,   52.42 ,1557 ,  2970
+Neon      ,Sunset   ,   50.78 ,1468 ,  2891
+Veto      ,Sunset   ,   49.57 , 463 ,   934
+Yoru      ,Sunset   ,   49.49 ,1405 ,  2839
+Raze      ,Sunset   ,   49.0  , 639 ,  1304
+Astra     ,Sunset   ,   48.61 , 192 ,   395
+Cypher    ,Sunset   ,   47.94 ,1184 ,  2470
+Waylay    ,Sunset   ,   47.81 , 919 ,  1922
+Sova      ,Sunset   ,   47.65 ,1428 ,  2997
+Breach    ,Sunset   ,   47.36 , 753 ,  1590
+KAY/O     ,Sunset   ,   47.24 , 368 ,   779
+Viper     ,Sunset   ,   47.18 , 786 ,  1666
+Deadlock  ,Sunset   ,   46.95 , 508 ,  1082
+Vyse      ,Sunset   ,   46.87 , 546 ,  1165
+Jett      ,Sunset   ,   46.71 , 298 ,   638
+Omen      ,Sunset   ,   44.18 , 876 ,  1983
+Tejo      ,Sunset   ,   43.78 , 102 ,   233
+Reyna     ,Sunset   ,   43.27 ,  45 ,   104
+Killjoy   ,Sunset   ,   41.51 ,  44 ,   106
