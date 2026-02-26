@@ -3,7 +3,7 @@
 import torch
 
 from model import ValAITransformer
-from dataset import load_agent_baselines, load_agent_raw_baselines, load_agent_rounds
+from dataset import load_agent_data
 from constants import NUM_AGENTS, NUM_MAPS
 
 
@@ -78,9 +78,10 @@ class SpinningTopScorer:
         model.load_state_dict(ckpt["model_state"])
         model.eval()
 
+        adj, raw, rounds = load_agent_data(baseline_csv)
         return cls(
             model=model,
-            adj_baselines=load_agent_baselines(baseline_csv),
-            raw_baselines=load_agent_raw_baselines(baseline_csv),
-            agent_rounds=load_agent_rounds(baseline_csv),
+            adj_baselines=adj,
+            raw_baselines=raw,
+            agent_rounds=rounds,
         )

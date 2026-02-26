@@ -5,7 +5,7 @@ from collections import Counter
 
 import torch
 
-from constants import AGENTS, AGENT_TO_IDX, IDX_TO_AGENT, MAP_TO_IDX, AGENT_ROLES, ROLE_NAMES
+from constants import AGENTS, AGENT_TO_IDX, IDX_TO_AGENT, MAP_TO_IDX, AGENT_ROLES
 from scorer import SpinningTopScorer
 
 _BATCH_SIZE = 512
@@ -60,16 +60,12 @@ class ValAISolver:
 
         viable = self._viable_agents(map_idx)
         available = [aid for aid in viable if aid not in locked_ids]
-        excluded = len(self._all_ids) - len(viable)
 
         # Filter by role composition
         valid_combos = []
-        role_rejected = 0
         for combo in itertools.combinations(available, slots):
             if self._valid_role_comp(locked_ids + list(combo)):
                 valid_combos.append(combo)
-            else:
-                role_rejected += 1
 
         N = len(valid_combos)
 
@@ -93,23 +89,10 @@ class ValAISolver:
         results = []
         for i in order[:elite_n].tolist():
             team_ids = all_teams[i].tolist()
-            wr = all_wrs[i].item()
-            sigma = all_sigmas[i].item()
-
-            lifts = {}
-            roles = {}
-            for aid in team_ids:
-                agent_name = IDX_TO_AGENT[aid]
-                raw_base = self.scorer.raw_baselines.get((map_idx, aid), 0.0)
-                lifts[agent_name] = round((wr - raw_base) * 100, 2)
-                roles[agent_name] = ROLE_NAMES.get(self._role_of.get(aid, -1), "Unknown")
-
             results.append({
-                "team": [IDX_TO_AGENT[i] for i in team_ids],
-                "wr": wr,
-                "sigma": sigma,
-                "lifts": lifts,
-                "roles": roles,
+                "team": [IDX_TO_AGENT[aid] for aid in team_ids],
+                "wr": all_wrs[i].item(),
+                "sigma": all_sigmas[i].item(),
             })
 
         return results

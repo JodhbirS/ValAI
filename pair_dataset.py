@@ -69,7 +69,7 @@ class PairDataset(Dataset):
             ]
             self.samples.append((a, b, map_idx, wr, total_rounds, ind_wrs))
 
-        print(f"[pair_dataset] {len(self.samples)} unique pair-map samples")
+        print(f"[pair_dataset] {len(self.samples)} pair-map samples")
 
     def __len__(self) -> int:
         return len(self.samples)

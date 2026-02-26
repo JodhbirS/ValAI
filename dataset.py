@@ -33,49 +33,43 @@ def _load_baseline_df(csv_path: str) -> pd.DataFrame:
     return df
 
 
-def load_agent_baselines(
+def load_agent_data(
     csv_path: str = "agent_win_rates.csv",
     prior_n: int = AGENT_PRIOR_N,
     prior_wr: float = AGENT_PRIOR_WR,
-) -> dict[tuple[int, int], float]:
-    """{(map_idx, agent_idx): credibility_adjusted_wr}"""
+) -> tuple[
+    dict[tuple[int, int], float],
+    dict[tuple[int, int], float],
+    dict[tuple[int, int], int],
+]:
+    """Load agent baselines from CSV in a single pass.
+
+    Returns:
+        (adj_baselines, raw_baselines, agent_rounds)
+        Keys are (map_idx, agent_idx).
+    """
     df = _load_baseline_df(csv_path)
-    result: dict[tuple[int, int], float] = {}
+    adj: dict[tuple[int, int], float] = {}
+    raw: dict[tuple[int, int], float] = {}
+    rounds: dict[tuple[int, int], int] = {}
     for _, row in df.iterrows():
         if row["agent"] not in AGENT_TO_IDX or row["map"] not in MAP_TO_IDX:
             continue
         key = (MAP_TO_IDX[row["map"]], AGENT_TO_IDX[row["agent"]])
         raw_wr = float(row["win_rate"]) / 100.0
-        result[key] = credibility_adjust(raw_wr, int(row["rounds"]), prior_n, prior_wr)
-    return result
+        adj[key] = credibility_adjust(raw_wr, int(row["rounds"]), prior_n, prior_wr)
+        raw[key] = raw_wr
+        rounds[key] = int(row["rounds"])
+    return adj, raw, rounds
 
 
-def load_agent_raw_baselines(
+# Keep thin wrappers for backward compatibility (used by pair_dataset / CompDataset).
+def load_agent_baselines(
     csv_path: str = "agent_win_rates.csv",
+    prior_n: int = AGENT_PRIOR_N,
+    prior_wr: float = AGENT_PRIOR_WR,
 ) -> dict[tuple[int, int], float]:
-    """{(map_idx, agent_idx): raw_observed_wr}"""
-    df = _load_baseline_df(csv_path)
-    result: dict[tuple[int, int], float] = {}
-    for _, row in df.iterrows():
-        if row["agent"] not in AGENT_TO_IDX or row["map"] not in MAP_TO_IDX:
-            continue
-        key = (MAP_TO_IDX[row["map"]], AGENT_TO_IDX[row["agent"]])
-        result[key] = float(row["win_rate"]) / 100.0
-    return result
-
-
-def load_agent_rounds(
-    csv_path: str = "agent_win_rates.csv",
-) -> dict[tuple[int, int], int]:
-    """{(map_idx, agent_idx): rounds_played}"""
-    df = _load_baseline_df(csv_path)
-    result: dict[tuple[int, int], int] = {}
-    for _, row in df.iterrows():
-        if row["agent"] not in AGENT_TO_IDX or row["map"] not in MAP_TO_IDX:
-            continue
-        key = (MAP_TO_IDX[row["map"]], AGENT_TO_IDX[row["agent"]])
-        result[key] = int(row["rounds"])
-    return result
+    return load_agent_data(csv_path, prior_n, prior_wr)[0]
 
 
 class CompDataset(Dataset):
@@ -129,9 +123,6 @@ class CompDataset(Dataset):
                 for aid in agent_idxs
             ]
             self.samples.append((agent_idxs, map_idx, wr, rounds, individual_wrs))
-
-        if skipped:
-            print(f"[dataset] Skipped {skipped} rows (unknown agents/maps or <{min_rounds} rounds)")
 
     def __len__(self) -> int:
         return len(self.samples)
