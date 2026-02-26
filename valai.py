@@ -7,58 +7,36 @@ import argparse
 from constants import AGENTS, MAPS
 from train import DEFAULTS
 
-_ROLE_TAG = {"Controller": "SMK", "Duelist": "DUE", "Initiator": "INI", "Sentinel": "SEN"}
 
 
-def _bar(value: float, width: int = 20, lo: float = 0.0, hi: float = 1.0) -> str:
-    frac = max(0.0, min(1.0, (value - lo) / (hi - lo)))
-    filled = int(frac * width)
-    return "█" * filled + "░" * (width - filled)
-
-
-def _print_result(result: dict, map_name: str, locked: list[str], rank: int = 1):
+def _print_result(result: dict, map_name: str, locked: list[str]):
     team = result["team"]
     wr = result["wr"]
     sigma = result["sigma"]
-    lifts = result["lifts"]
-    roles = result.get("roles", {})
     suggested = [a for a in team if a not in locked]
 
     print()
-    print("═" * 62)
-    print(f"  ValAI · {map_name}   Rank #{rank}")
-    print("═" * 62)
-    tagged = [f"{a} [{_ROLE_TAG.get(roles.get(a, ''), '???')}]" for a in team]
-    print(f"  {'  |  '.join(tagged)}")
-    print("─" * 62)
-    print(f"  Locked : {', '.join(locked) if locked else '(none)'}")
-    print(f"  Pick   : {', '.join(suggested)}")
+    print(f"  Map      : {map_name}")
+    print(f"  Locked   : {', '.join(locked) if locked else '(none)'}")
+    print(f"  Pick     : {', '.join(suggested)}")
+    print(f"  Win Rate : {wr * 100:.2f}%")
+    print(f"  SD       : {sigma:.4f}")
     print()
-    print(f"  Win Rate  : {wr * 100:5.2f}%   {_bar(wr, lo=0.45, hi=0.58)}")
-    print(f"  Spread (σ): {sigma:.4f}     {'↓ Even' if sigma < 0.03 else '↑ Uneven'}")
-    print()
-    print("  SYNERGY BREAKDOWN  (lift = Team WR − agent solo WR)")
-    print(f"  {'Agent':<12} {'Role':<6} {'Solo WR':>8}  {'Team WR':>8}  {'Lift':>7}")
-    print("  " + "─" * 52)
-    for agent in team:
-        raw_base = wr - (lifts[agent] / 100)
-        lift_val = lifts[agent]
-        sign = "+" if lift_val >= 0 else ""
-        role_tag = _ROLE_TAG.get(roles.get(agent, ""), "???")
-        note = "  ← below solo" if lift_val < -1.0 else ""
-        print(
-            f"  {agent:<12} {role_tag:<6} {raw_base * 100:>7.2f}%  {wr * 100:>7.2f}%  "
-            f"{sign}{lift_val:>5.2f}%{note}"
-        )
-    print("═" * 62)
 
 
 def _pick_map() -> str:
-    """Prompt user to choose a map."""
     sorted_maps = sorted(MAPS)
-    print("\n  Available maps:")
-    for i, m in enumerate(sorted_maps, 1):
-        print(f"    {i:>2}. {m}")
+    cols, col_w = 3, 18
+    rows = (len(sorted_maps) + cols - 1) // cols
+    print()
+    for r in range(rows):
+        line = ""
+        for c in range(cols):
+            idx = c * rows + r
+            if idx < len(sorted_maps):
+                entry = f"{idx + 1:>2}. {sorted_maps[idx]}"
+                line += entry.ljust(col_w)
+        print(f"  {line.rstrip()}")
     print()
     while True:
         raw = input("  Map (name or number): ").strip()
@@ -78,28 +56,42 @@ def _pick_map() -> str:
 
 
 def _pick_locked() -> list[str]:
-    """Prompt user for 0–4 locked agents."""
-    print("\n  Lock agents (comma-separated), or press Enter for none:")
-    print(f"  Agents: {', '.join(sorted(AGENTS))}\n")
+    agents = list(AGENTS)
+    cols, col_w = 4, 16
+    rows = (len(agents) + cols - 1) // cols
+    print()
+    for r in range(rows):
+        line = ""
+        for c in range(cols):
+            idx = c * rows + r
+            if idx < len(agents):
+                entry = f"{idx + 1:>2}. {agents[idx]}"
+                line += entry.ljust(col_w)
+        print(f"  {line.rstrip()}")
+    print()
+
     while True:
-        raw = input("  Locked agents: ").strip()
+        raw = input("  Lock agents (e.g. 1,5,12) or Enter for none: ").strip()
         if not raw:
             return []
-        names = [n.strip() for n in raw.split(",") if n.strip()]
-        lookup = {a.lower(): a for a in AGENTS}
-        fixed, bad = [], []
-        for n in names:
-            if n.lower() in lookup:
-                fixed.append(lookup[n.lower()])
-            else:
-                bad.append(n)
+        parts = [p.strip() for p in raw.split(",") if p.strip()]
+        locked, bad = [], []
+        for p in parts:
+            try:
+                idx = int(p) - 1
+                if 0 <= idx < len(agents):
+                    locked.append(agents[idx])
+                else:
+                    bad.append(p)
+            except ValueError:
+                bad.append(p)
         if bad:
-            print(f"  Unknown agent(s): {bad}. Check spelling.")
+            print(f"  Invalid: {', '.join(bad)}. Pick numbers 1–{len(agents)}.")
             continue
-        if len(fixed) >= 5:
-            print("  Can lock at most 4 agents (need at least 1 open slot).")
+        if len(locked) >= 5:
+            print("  Max 4 agents.")
             continue
-        return fixed
+        return locked
 
 
 def cmd_solve_interactive():
@@ -110,15 +102,12 @@ def cmd_solve_interactive():
         sys.exit(1)
 
     print()
-    print("  ╔══════════════════════════════════════╗")
-    print("  ║   ValAI — Team Composition Optimizer  ║")
-    print("  ╚══════════════════════════════════════╝")
+    print("  ValAI — Team Composition Optimizer")
+    print()
 
     map_name = _pick_map()
-    locked = _pick_locked()
 
-    print(f"\n  Map    : {map_name}")
-    print(f"  Locked : {', '.join(locked) if locked else '(none — full 5-man search)'}\n")
+    locked = _pick_locked()
 
     from scorer import SpinningTopScorer
     from solver import ValAISolver
@@ -127,11 +116,8 @@ def cmd_solve_interactive():
     solver = ValAISolver(scorer, top_pct=0.02, max_per_role=2)
     elite = solver.solve(map_name, locked)
 
-    show = min(3, len(elite))
-    for i, result in enumerate(elite[:show], 1):
-        _print_result(result, map_name, locked, rank=i)
-
-    print(f"\n  (Top {show} of {len(elite)} valid compositions)\n")
+    if elite:
+        _print_result(elite[0], map_name, locked)
 
 
 def cmd_train(args):

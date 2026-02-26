@@ -4,7 +4,6 @@ import itertools
 from collections import Counter
 
 import torch
-from tqdm import tqdm
 
 from constants import AGENTS, AGENT_TO_IDX, IDX_TO_AGENT, MAP_TO_IDX, AGENT_ROLES, ROLE_NAMES
 from scorer import SpinningTopScorer
@@ -73,15 +72,6 @@ class ValAISolver:
                 role_rejected += 1
 
         N = len(valid_combos)
-        print(
-            f"  Viable agents on {map_name}: {len(viable)}/28 "
-            f"({excluded} excluded — zero picks on this map)"
-        )
-        print(
-            f"  Role filter: {role_rejected:,} invalid comps removed "
-            f"(max {self.max_per_role} per role, need ≥1 smoke + ≥1 duelist)"
-        )
-        print(f"  Analysing {N:,} valid completions...")
 
         # Build team tensor and batch-score
         all_teams = torch.zeros(N, 5, dtype=torch.long)
@@ -90,7 +80,7 @@ class ValAISolver:
 
         all_wrs = torch.zeros(N)
         all_sigmas = torch.zeros(N)
-        for start in tqdm(range(0, N, _BATCH_SIZE), desc="Scoring", ncols=70, leave=False):
+        for start in range(0, N, _BATCH_SIZE):
             end = min(start + _BATCH_SIZE, N)
             wrs, sigmas = self.scorer.score_batch(all_teams[start:end], map_idx)
             all_wrs[start:end] = wrs
